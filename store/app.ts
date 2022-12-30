@@ -5,6 +5,7 @@ export const useAppStore = defineStore({
   state: (): State => {
     return {
       theme: 'light',
+      loading: true,
     }
   },
   getters: {
@@ -25,6 +26,9 @@ export const useAppStore = defineStore({
       else document.documentElement.classList.remove('dark')
 
       localStorage.setItem('theme', theme)
+    },
+    changeLoading(value = false) {
+      this.loading = value
     },
   },
 })

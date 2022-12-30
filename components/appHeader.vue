@@ -25,6 +25,7 @@ const oppositeTheme = computed(() => {
 </template>
 
 <style scoped>
+/* css root 변수를 오버라이드 */
 .navbar-default {
   --color-text-active: #ffffff;
   --color-text-hover: #ffffff;
