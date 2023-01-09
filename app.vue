@@ -32,9 +32,9 @@ onMounted(() => {
       />
     </Teleport> -->
 
-    <nuxt-loadingindicator>
+    <!-- <nuxt-loadingindicator>
       <div class="w-screen h-screen flex justify-center align-center">로딩.....</div>
-    </nuxt-loadingindicator>
+    </nuxt-loadingindicator> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
