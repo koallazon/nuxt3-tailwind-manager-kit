@@ -25,6 +25,7 @@ onMounted(() => {
 <template>
   <page-container :title="title">
     <h2>여기는 {{ title }}입니다.</h2>
+    <div>{{ $hello('world') }}</div>
   </page-container>
 </template>
 

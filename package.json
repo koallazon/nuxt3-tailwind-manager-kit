@@ -10,6 +10,7 @@
     "build:dev": "cross-env DEPLOY_ENV=dev nuxt build",
     "build:qa": "cross-env DEPLOY_ENV=qa nuxt build",
     "build:prod": "cross-env DEPLOY_ENV=prod nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

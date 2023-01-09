@@ -87,6 +87,8 @@ export default defineNuxtConfig({
     ],
   ],
 
+  plugins: [{ src: '~/plugins/myPlugins' }],
+
   // 전역 CSS
   css: ['~/assets/css/tailwind.css', '~/assets/scss/app.scss'],
 
