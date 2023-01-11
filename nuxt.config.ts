@@ -7,6 +7,9 @@ dotenv.config({
   path: path.resolve(__dirname, `.env.${process.env.DEPLOY_ENV || 'local'}`),
 })
 
+// SSL을 사용하기 위해 추가
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineNuxtConfig({
@@ -38,7 +41,9 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
-  telemetry: false, // Nuxt 사용자 개선 로그 전송 비활성화
+
+  // Nuxt 사용자 개선 로그 전송 비활성화
+  telemetry: false,
 
   // Nitro 웹서버 설정
   nitro: {

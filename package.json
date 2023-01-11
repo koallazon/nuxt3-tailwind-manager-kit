@@ -2,10 +2,10 @@
   "name": "nuxt3-tailwind-manager-kit",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nuxt dev",
-    "dev:dev": "cross-env DEPLOY_ENV=dev nuxt dev",
-    "dev:qa": "cross-env DEPLOY_ENV=qa nuxt dev",
-    "dev:prod": "cross-env DEPLOY_ENV=prod nuxt dev",
+    "dev": "nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
+    "dev:dev": "cross-env DEPLOY_ENV=dev nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
+    "dev:qa": "cross-env DEPLOY_ENV=qa nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
+    "dev:prod": "cross-env DEPLOY_ENV=prod nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
     "build": "nuxt build",
     "build:dev": "cross-env DEPLOY_ENV=dev nuxt build",
     "build:qa": "cross-env DEPLOY_ENV=qa nuxt build",
@@ -48,7 +48,7 @@
   "keywords": [
     "nuxt3",
     "tailwindcss",
-    "manager"
+    "admin"
   ],
   "license": "ISC",
   "engines": {
