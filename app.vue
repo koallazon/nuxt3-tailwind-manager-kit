@@ -1,21 +1,40 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
 const appStore = useAppStore()
+const app = useAppConfig() as AppConfigInput
+
+useHead({
+  title: app.name,
+  titleTemplate: '%s - 사이트',
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Nuxt3 manager kit',
+    },
+  ],
+})
 
 onMounted(() => {
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    appStore.changeTheme('dark')
-  } else {
-    appStore.changeTheme('light')
-  }
+  appStore.initTheme()
 })
 </script>
 
 <template>
   <NuxtLayout>
+    <!--
+      전역 로딩바 작업 중
+      <Teleport to="body">
+      <div
+        v-if="appStore.loading || true"
+        class="fixed left-0 top-0 h-0.5 w-screen h-screen z-50 bg-green-500"
+      />
+    </Teleport> -->
+
+    <!-- <nuxt-loadingindicator>
+      <div class="w-screen h-screen flex justify-center align-center">로딩.....</div>
+    </nuxt-loadingindicator> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
