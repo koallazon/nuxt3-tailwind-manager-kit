@@ -1,4 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-pwd
-source /home/ec2-user/app/scripts/deploy/config.sh
+source ./config.sh
