@@ -1,0 +1,12 @@
+service: nuxt3Starter
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: ap-northeast-2
+
+functions:
+  nuxt:
+    handler: .output/server/index.handler
+    events:
+      - httpApi: '*'

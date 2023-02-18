@@ -6,6 +6,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 dotenv.config({
   path: path.resolve(__dirname, `.env.${process.env.DEPLOY_ENV || 'local'}`),
 })
+console.log('🚀 ~ file: nuxt.config.ts:9 ~ path', process.env.PORT)
 
 // SSL을 사용하기 위해 추가
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
@@ -47,7 +48,8 @@ export default defineNuxtConfig({
 
   // Nitro 웹서버 설정
   nitro: {
-    preset: isProd ? 'node-cluster' : 'node-server',
+    // preset: isProd && false ? 'node-cluster' : 'node-server',
+    preset: 'aws-lambda',
   },
 
   // vite
