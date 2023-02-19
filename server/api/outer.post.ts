@@ -6,13 +6,8 @@ export default defineEventHandler(async (event) => {
   try {
     const valid = await schema.validateAsync(body)
     console.log('🚀 ~ file: outer.post.ts:7 ~ defineEventHandler ~ valid', valid)
-    $fetch('http://localhost:3000/user?name=koallazon')
-      .then((res) => {
-        console.log('user res', res)
-      })
-      .catch((err) => {
-        console.log('user err', err)
-      })
+    const result = await $fetch('http://localhost:3000/user?name=koallazon')
+    console.log('🚀 ~ file: outer.post.ts:10 ~ defineEventHandler ~ result', result)
 
     return `success - ${new Date().toLocaleTimeString()}`
   } catch (err: any) {

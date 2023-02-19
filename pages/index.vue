@@ -24,6 +24,7 @@ interface ResponseData {
 }
 const dataRef = ref<ResponseData>({ name: '', age: 0 })
 const errorMsg = ref<string>('')
+const isLoading = ref<any>(false)
 
 const testFunc = async () => {
   const { data, pending, error } = await useFetch<ResponseData>('/api/outer', {
@@ -31,14 +32,16 @@ const testFunc = async () => {
     body: {
       host: 'yookidz',
       domain: 'blog.yookidz.site',
+      person: ['name'],
     },
   })
+  console.log('pending', pending.value)
+  isLoading.value = pending.value
   if (error.value) {
     console.log('🚀 ~ file: index.vue:28 ~ testFunc ~ error', error.value)
     errorMsg.value = error.value.statusMessage ?? ''
     return
   }
-  if (pending) console.log('🚀 ~ loading....')
   if (data && data.value !== null) dataRef.value = data.value
 }
 
@@ -56,6 +59,8 @@ const testFunc = async () => {
     </div>
     <hr />
     <div>error: {{ errorMsg }}</div>
+    <hr />
+    <div>loading: {{ isLoading }}</div>
   </page-container>
 </template>
 
