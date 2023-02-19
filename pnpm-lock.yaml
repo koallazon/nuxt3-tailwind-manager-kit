@@ -14,6 +14,7 @@ specifiers:
   cross-env: ^7.0.3
   eslint: ^8.30.0
   jest: ^29.3.1
+  joi: ^17.8.1
   nuxt: 3.0.0
   postcss: ^8.4.20
   sass: ^1.57.1
@@ -29,6 +30,7 @@ dependencies:
   '@vueuse/core': 9.8.2
   '@vueuse/nuxt': 9.8.2_nuxt@3.0.0
   cross-env: 7.0.3
+  joi: 17.8.1
 
 devDependencies:
   '@antfu/eslint-config': 0.34.0_lzzuuodtsqwxnvqeq4g4likcqa
@@ -574,6 +576,36 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+
+  /@hapi/address/5.1.0:
+    resolution: {integrity: sha512-b/OicomrGhG+aRgAhtxqOArHDH7kE2sY0IQ5MwIU6EkzUIOmsfi4YfYPZxGSauHLgVzcwk2rseCi7fjeMpQh+w==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@hapi/hoek': 11.0.2
+    dev: false
+
+  /@hapi/formula/3.0.2:
+    resolution: {integrity: sha512-hY5YPNXzw1He7s0iqkRQi+uMGh383CGdyyIGYtB+W5N3KHPXoqychklvHhKCC9M3Xtv0OCs/IHw+r4dcHtBYWw==}
+    dev: false
+
+  /@hapi/hoek/11.0.2:
+    resolution: {integrity: sha512-aKmlCO57XFZ26wso4rJsW4oTUnrgTFw2jh3io7CAtO9w4UltBNwRXvXIVzzyfkaaLRo3nluP/19msA8vDUUuKw==}
+    dev: false
+
+  /@hapi/pinpoint/2.0.1:
+    resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
+    dev: false
+
+  /@hapi/tlds/1.0.1:
+    resolution: {integrity: sha512-OXs5OliWsLTmvzQKZtb3KhfEz30WuuaizwAn95GLfeK+JpGnBxR55lALv3kA4T1RRb3wlrNjnboBg6ur1Czvig==}
+    engines: {node: '>=14.0.0'}
+    dev: false
+
+  /@hapi/topo/6.0.1:
+    resolution: {integrity: sha512-JioWUZL1Bm7r8bnCDx2AUggiPwpV7djFfDTWT1aZSyHjN++fVz7XPdW8YVCxvyv9bSWcbbOLV/h4U1zGdwrN3w==}
+    dependencies:
+      '@hapi/hoek': 11.0.2
+    dev: false
 
   /@headlessui/vue/1.7.7:
     resolution: {integrity: sha512-dkdNhJkxyT9rXW5fHx/MkKaM3U13P3duYuwoGTRmDGjE7xAsvcWOSJRJpw1AmCQTvjZF44bh2wSlySLaHW+WuQ==}
@@ -4982,6 +5014,17 @@ packages:
   /jiti/1.16.0:
     resolution: {integrity: sha512-L3BJStEf5NAqNuzrpfbN71dp43mYIcBUlCRea/vdyv5dW/AYa1d4bpelko4SHdY3I6eN9Wzyasxirj1/vv5kmg==}
     hasBin: true
+
+  /joi/17.8.1:
+    resolution: {integrity: sha512-Zoafe6E2kQ+hkkJQSBnOxA8beb2LF33keCxZP3vSy7qTHj9/2GAEQ9KLwfe+PR35WvspwNz0jWajDIHLnCKfpg==}
+    dependencies:
+      '@hapi/address': 5.1.0
+      '@hapi/formula': 3.0.2
+      '@hapi/hoek': 11.0.2
+      '@hapi/pinpoint': 2.0.1
+      '@hapi/tlds': 1.0.1
+      '@hapi/topo': 6.0.1
+    dev: false
 
   /js-sdsl/4.2.0:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}

@@ -2,8 +2,8 @@
   "name": "nuxt3-tailwind-manager-kit",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
-    "dev:http": "nuxt dev",
+    "dev": "nuxt dev",
+    "dev:ssl": "nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
     "dev:dev": "cross-env DEPLOY_ENV=dev nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
     "dev:qa": "cross-env DEPLOY_ENV=qa nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
     "dev:prod": "cross-env DEPLOY_ENV=prod nuxt dev --https --ssl-cert ssl-cert.pem --ssl-key ssl-key.pem",
@@ -41,7 +41,8 @@
     "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^9.8.2",
     "@vueuse/nuxt": "^9.8.2",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "joi": "^17.8.1"
   },
   "description": "nuxt3와 tailwindcss로 만들어진 관리자사이트 템플릿",
   "author": "leetaegyu (https://blog.yookidz.site)",

@@ -3,6 +3,7 @@ import { useAppStore } from '~/store/app'
 const appStore = useAppStore()
 const app = useAppConfig()
 const auth = useCookie('auth')
+
 // const nuxtApp = useNuxtApp()
 // console.log('🚀 ~ file: app.vue:7 ~ nuxtApp', process.server, nuxtApp)
 // console.log('🚀 ~ file: app.vue:6 ~ auth', auth.value)
