@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDialogStore } from '~/store/dialog'
+const dialogStore = useDialogStore()
 useHead({
   title: '기본',
 })
@@ -21,4 +23,7 @@ useHead({
       <AppFooter />
     </div>
   </div>
+  <Teleport to="body">
+    <Dialog v-if="dialogStore.hasDialog" />
+  </Teleport>
 </template>

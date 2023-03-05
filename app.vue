@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
+import { useDialogStore } from '~/store/dialog'
 const appStore = useAppStore()
+const dialogStore = useDialogStore()
 const app = useAppConfig()
 const auth = useCookie('auth')
-
-// const nuxtApp = useNuxtApp()
-// console.log('🚀 ~ file: app.vue:7 ~ nuxtApp', process.server, nuxtApp)
-// console.log('🚀 ~ file: app.vue:6 ~ auth', auth.value)
 
 useHead({
   title: app.name,
@@ -28,18 +26,6 @@ onMounted(() => {
 
 <template>
   <NuxtLayout>
-    <!--
-      전역 로딩바 작업 중
-      <Teleport to="body">
-      <div
-        v-if="appStore.loading || true"
-        class="fixed left-0 top-0 h-0.5 w-screen h-screen z-50 bg-green-500"
-      />
-    </Teleport> -->
-
-    <!-- <nuxt-loadingindicator>
-      <div class="w-screen h-screen flex justify-center align-center">로딩.....</div>
-    </nuxt-loadingindicator> -->
     <NuxtPage />
   </NuxtLayout>
 </template>

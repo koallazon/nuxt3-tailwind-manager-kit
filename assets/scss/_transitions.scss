@@ -23,3 +23,13 @@
   transform: translateY(-20px);
   opacity: 0;
 }
+
+.enter-active,
+.leave-active {
+  transition: opacity 2s ease;
+}
+
+.enter-from,
+.leave-to {
+  opacity: 0;
+}
