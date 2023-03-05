@@ -8,6 +8,10 @@ const menus = ref([
     text: 'dashboard',
     to: '/dashboard',
   },
+  {
+    text: 'loader',
+    to: '/loader',
+  },
 ])
 </script>
 

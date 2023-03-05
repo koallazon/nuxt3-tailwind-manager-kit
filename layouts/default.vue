@@ -10,6 +10,12 @@ useHead({
     <div class="w-full flex flex-col justify-start">
       <AppHeader />
       <main class="p-5">
+        <NuxtLoadingIndicator
+          :height="5"
+          color="repeating-linear-gradient(to right,#ff0000 0%,#882200 50%,#771122 100%)"
+          :throttle="200"
+          :duration="2000"
+        />
         <NuxtPage />
       </main>
       <AppFooter />
