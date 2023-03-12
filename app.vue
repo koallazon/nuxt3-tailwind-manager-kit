@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
-import { useDialogStore } from '~/store/dialog'
 const appStore = useAppStore()
-const dialogStore = useDialogStore()
 const app = useAppConfig()
 const auth = useCookie('auth')
 
@@ -28,4 +26,8 @@ onMounted(() => {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+
+  <teleport to="body">
+    <ToastContainer />
+  </teleport>
 </template>

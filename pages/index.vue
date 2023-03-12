@@ -1,22 +1,13 @@
 <script setup lang="ts">
+import nuxtConfig from '~~/nuxt.config'
+
 const title = '홈'
 useHead({
   title,
 })
-// const promiseFunc = () => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve('ok')
-//     }, 5000)
-//   })
-// }
+const count = ref(1)
 
-// onMounted(() => {
-//   nextTick(async () => {
-//     const data = await promiseFunc()
-//     console.log('🚀 ~ file: index.vue:17 ~ nextTick ~ data', data)
-//   })
-// })
+const { $UI } = useNuxtApp()
 
 interface ResponseData {
   name: string
@@ -27,7 +18,7 @@ const errorMsg = ref<string>('')
 const isLoading = ref<any>(false)
 
 const testFunc = async () => {
-  const { data, pending, error } = await useFetch<ResponseData>('/api/outer', {
+  const { data, pending, error } = await useFetch('/api/outer', {
     method: 'POST',
     body: {
       host: 'yookidz',
@@ -40,19 +31,22 @@ const testFunc = async () => {
   if (error.value) {
     console.log('🚀 ~ file: index.vue:28 ~ testFunc ~ error', error.value)
     errorMsg.value = error.value.statusMessage ?? ''
-    return
+    // return
   }
-  if (data && data.value !== null) dataRef.value = data.value
+  // if (data && data.value !== null) dataRef.value = data.value
 }
 
 // const { data } = await useAsyncData('count', promiseFunc)
 // console.log('data', data)
+const createToast = () => {
+  $UI.toast(`안녕${count.value}`)
+  count.value++
+}
 </script>
 
 <template>
   <page-container :title="title">
     <h2>여기는 {{ title }}입니다.</h2>
-    <div>{{ $hello('world') }}</div>
     <button type="button" @click="testFunc">API 요청</button>
     <div class="p-5">
       {{ dataRef }}
@@ -61,6 +55,7 @@ const testFunc = async () => {
     <div>error: {{ errorMsg }}</div>
     <hr />
     <div>loading: {{ isLoading }}</div>
+    <button type="button" @click="createToast">toast 생성</button>
   </page-container>
 </template>
 
