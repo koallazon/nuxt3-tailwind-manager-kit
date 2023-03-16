@@ -1,26 +1,28 @@
 <script setup lang="ts">
-import { TransitionChild, TransitionRoot } from '@headlessui/vue'
+import { TransitionRoot } from '@headlessui/vue'
 import { useToastStore } from '~/store/toast'
 const toastStore = useToastStore()
 </script>
 
 <template>
-  <TransitionRoot appear :show="true" as="template">
-    <div class="w-full fixed inset-y-0 pointer-events-none overflow-hidden p-2 z-[1000]">
-      <TransitionChild
-        class="h-full flex flex-col items-center justify-end"
-        as="ul"
-        enter="duration-300 ease-out"
-        enter-from="translate-y-6"
-        enter-to="translate-y-0"
-        leave="duration-200 ease-in"
-        leave-from="translate-y-0"
-        leave-to="translate-y-6"
-      >
-        <ToastItem v-for="toast in toastStore.toasts" :key="toast.id" :item="toast" />
-      </TransitionChild>
-    </div>
-  </TransitionRoot>
+  <div class="w-full fixed inset-y-0 pointer-events-none overflow-hidden p-2 z-[1000]">
+    <ul class="h-full flex flex-col items-center justify-end">
+      <temlate v-for="(toast, i) in toastStore.toasts" :key="i">
+        <TransitionRoot
+          :show="true"
+          appear
+          enter="duration-300 ease"
+          enter-from="translate-y-3"
+          enter-to="translate-y-0"
+          leave="duration-300 ease-in-out"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
+        >
+          <ToastItem :item="toast" />
+        </TransitionRoot>
+      </temlate>
+    </ul>
+  </div>
 </template>
 
 <style scoped></style>
