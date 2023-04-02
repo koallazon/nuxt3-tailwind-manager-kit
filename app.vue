@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
 const appStore = useAppStore()
-const app = useAppConfig() as AppConfigInput
+const app = useAppConfig()
 
 useHead({
   title: app.name,

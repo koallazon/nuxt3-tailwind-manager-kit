@@ -40,7 +40,8 @@
     "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^9.8.2",
     "@vueuse/nuxt": "^9.8.2",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "lit-tailwind": "^0.0.3"
   },
   "description": "nuxt3와 tailwindcss로 만들어진 관리자사이트 템플릿",
   "author": "leetaegyu (https://blog.yookidz.site)",
