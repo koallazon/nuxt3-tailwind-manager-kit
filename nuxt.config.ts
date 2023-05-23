@@ -42,13 +42,25 @@ export default defineNuxtConfig({
 
   // Nitro 웹서버 설정
   nitro: {
-    preset: isProd ? 'node-cluster' : 'node-server',
+    // preset: isProd ? 'node-cluster' : 'node-server',
+    preset: 'aws-lambda',
+    serveStatic: true,
+  },
+
+  router: {
+    options: {
+      // routes: [
+      //   { name: 'index', path: '/', component: () => import('@/pages/index.vue') },
+      // ]
+    }
   },
 
   // vite
   vite: {
     plugins: [eslintPlugin()],
   },
+
+  ssr: true,
 
   // 런타임 환경변수
   runtimeConfig: {

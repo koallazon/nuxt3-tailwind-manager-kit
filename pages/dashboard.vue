@@ -3,6 +3,12 @@ const title = '대시보드'
 useHead({
   title,
 })
+definePageMeta({
+  middleware: (to, from) => {
+    console.log('dashboard to', to)
+    console.log('dashboard from', from)
+  },
+})
 </script>
 
 <template>

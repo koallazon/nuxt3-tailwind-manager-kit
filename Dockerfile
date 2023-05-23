@@ -1,7 +1,6 @@
-FROM node:18.12.1-alpine
+FROM node:18-slim
 
 # Dockerfile 관리자
-LABEL maintainer="ltg2206@hanatour.com"
 LABEL version="1.0"
 LABEL description="Nuxt3 Dockerfile"
 
@@ -24,10 +23,8 @@ ADD . /${APP_NAME}
 
 # 패키지 설치
 RUN npm install -g pnpm \
- && pnpm install
-
-# 앱 빌드
-RUN pnpm build:${PROFILE}
+ && pnpm install \
+ && pnpm build:${PROFILE}
 
 # app run
 CMD ["node", "./.output/server/index.mjs"]

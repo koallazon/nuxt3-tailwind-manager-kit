@@ -8,6 +8,10 @@ const menus = ref([
     text: 'dashboard',
     to: '/dashboard',
   },
+  {
+    text: '로그인',
+    to: '/login',
+  },
 ])
 </script>
 
