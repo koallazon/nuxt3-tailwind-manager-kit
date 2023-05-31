@@ -16,7 +16,7 @@ export const useToastStore = defineStore({
       this.toasts.push(toast)
       setTimeout(() => {
         this.removeToast(toast.id)
-      }, 3000)
+      }, 30000)
     },
     removeToast(id: string | undefined) {
       if (!this.hasToast) return

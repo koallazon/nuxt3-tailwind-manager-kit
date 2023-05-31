@@ -1,6 +1,7 @@
 import { uniqueId } from 'lodash-es'
 import { useToastStore } from '~/store/toast'
 import type { ToastOptions } from '~/types/toast'
+
 export default defineNuxtPlugin(() => {
   const toastStore = useToastStore()
   return {

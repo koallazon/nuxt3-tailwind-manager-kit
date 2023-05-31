@@ -13,3 +13,6 @@ dist
 *.pem
 *.pfx
 *.csr
+
+# storybook build
+storybook-static
