@@ -20,7 +20,7 @@ const sumbit = () => {
 <template>
   <div>
     <h2>로그인</h2>
-    로그인을 합니다. 처음
+    로그인을 합니다. 처음입니다.
     <form @submit.prevent="sumbit">
       <div>
         <input v-model="userId" type="text" placeholder="아이디" />
